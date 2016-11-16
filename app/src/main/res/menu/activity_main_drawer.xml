@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        >
+        <item android:id="@+id/nav_editProf" android:icon="@android:drawable/ic_menu_camera"
+            android:title="@string/menu_action_edit_prof"
+            />
+        <item android:id="@+id/nav_changePwd" android:icon="@android:drawable/ic_menu_camera"
+            android:title="@string/menu_action_chagnePWD" />
+       <!-- <item android:id="@+id/nav_notifications" android:icon="@drawable/notifications"
+            android:title="@string/menu_action_notification" />-->
+        <item android:id="@+id/nav_order_history" android:icon="@drawable/menuhistory"
+            android:title="@string/menu_action_orderHis" />
+       <!-- <item android:id="@+id/nav_wat_else" android:icon="@android:drawable/ic_menu_manage"
+            android:title="@string/menu_action_whatelse" />-->
+        <item android:id="@+id/nav_home" android:icon="@android:drawable/ic_menu_camera"
+            android:title="@string/menu_action_home" />
+        <item android:id="@+id/nav_about" android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/menu_action_about" />
+        <item android:id="@+id/nav_help" android:icon="@android:drawable/ic_menu_slideshow"
+            android:title="@string/menu_action_help" />
+        <item android:id="@+id/nav_settings" android:icon="@drawable/menusettings"
+            android:title="@string/action_settings" />
+        <item android:id="@+id/nav_logout" android:icon="@drawable/logout"
+            android:title="@string/menu_action_logout" />
+    </group>
+
+</menu>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "330588320237",
+    "project_id": "firebase-zoobiedo"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330588320237:android:e71302d52753ebdb",
+        "android_client_info": {
+          "package_name": "com.zoobiedo.org"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330588320237-pda1mkld1rvb0c5psikfj97dc060bj72.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zoobiedo.org",
+            "certificate_hash": "C368A19B63501D358EB137E809EA96882E62CB3D"
+          }
+        },
+        {
+          "client_id": "330588320237-v9ierfh2sb7a7vv48lkqd6qvv8bvhnrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIzNLdAFfbmDE6gASqIEMseJ3jpj0A24U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
