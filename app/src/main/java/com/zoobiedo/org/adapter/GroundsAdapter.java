@@ -65,12 +65,21 @@ public class GroundsAdapter extends RecyclerView.Adapter<GroundsAdapter.MyViewHo
         holder.distance.setText("" + mSubFacilitiesList.get(position).getDistance() + "" + "Km");
         holder.rating.setText(String.valueOf(mSubFacilitiesList.get(position).getSubFacilityId()));
 
-        Glide.with(context)
-                .load(mSubFacilitiesList.get(position).getImage1URL())
-                .placeholder(R.drawable.cricketbg)
-                .centerCrop()
-                .into(holder.icon);
-
+        if(type.equalsIgnoreCase(Constants.LIST_GROUNDS_CRIC)) {
+            Glide.with(context)
+                    .load(mSubFacilitiesList.get(position).getImage1URL())
+                    .placeholder(R.drawable.cricketbg)
+                    .centerCrop()
+                    .into(holder.icon);
+        }
+        else if(type.equalsIgnoreCase(Constants.LIST_GROUNDS_BAD))
+        {
+            Glide.with(context)
+                    .load(mSubFacilitiesList.get(position).getImage1URL())
+                    .placeholder(R.drawable.badmintonbg)
+                    .centerCrop()
+                    .into(holder.icon);
+        }
 
         holder.icon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +95,8 @@ public class GroundsAdapter extends RecyclerView.Adapter<GroundsAdapter.MyViewHo
                 }else
                 {
                     intent.putExtra(context.getResources().getString(R.string.extras_matchtype_bad), "batminton");
+                    intent.putExtra(context.getResources().getString(R.string.extras_slots), mFailitySlotsList);
+                    intent.putExtra(context.getResources().getString(R.string.extras_sub_facility_id), mSubFacilitiesList.get(position).getSubFacilityId());
                 }
 
                 context.startActivity(intent);

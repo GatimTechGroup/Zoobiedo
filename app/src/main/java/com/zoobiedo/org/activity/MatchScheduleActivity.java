@@ -78,6 +78,7 @@ public class MatchScheduleActivity extends AppCompatActivity{
         startTime = (RelativeLayout) findViewById(R.id.startTimeLayout);
         endTime = (RelativeLayout) findViewById(R.id.endtimeLayout);
 
+
         if(getIntent().getExtras().getString(getString(R.string.extras_matchtype_cricket))!= null)
         {
             groundName = (TextView) findViewById(R.id.groundName);
@@ -118,11 +119,17 @@ public class MatchScheduleActivity extends AppCompatActivity{
             coutName = (TextView) findViewById(R.id.courtName);
             coutArea = (TextView) findViewById(R.id.courtArea);
 
+            mFacilitiSlotsList = getIntent().getParcelableArrayListExtra(getString(R.string.extras_slots));
+            mSubFacilitiesList = AppUtils.getSubFacilities(AppUtils.getFacilities(mFacilitiSlotsList));
+            mSubFacilities = AppUtils.getSubFacilityFromId(mSubFacilitiesList, getIntent().getIntExtra(getString(R.string.extras_sub_facility_id), 0));
+
+            coutName.setText(mSubFacilities.getSubFacilityName());
+            coutArea.setText(mSubFacilities.getAddressLine1());
             layoutCrikcet.setVisibility(View.GONE);
             layoutBadminton.setVisibility(View.VISIBLE);
             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(MatchScheduleActivity.this,LinearLayoutManager.HORIZONTAL, false);
             myListFacilitiesBad.setLayoutManager(mLayoutManager);
-            myListCrikcetGroundTypes.setItemAnimator(new DefaultItemAnimator());
+            //myListCrikcetGroundTypes.setItemAnimator(new DefaultItemAnimator());
 
             mLayoutManager = new LinearLayoutManager(MatchScheduleActivity.this,LinearLayoutManager.VERTICAL, false);
             myListOptions.setLayoutManager(mLayoutManager);

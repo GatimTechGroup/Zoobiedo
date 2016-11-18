@@ -277,7 +277,10 @@ public class MainActivity extends AppCompatActivity
 
         }else
         {
-            intent.putExtra(getString(R.string.extras_matchtype_bad),Constants.LIST_GROUNDS_BAD);
+            mFacilitySlotsRequestData.setSportsType(4);
+            mFacilitySlotsRequestData.setCityID(1);
+            intent.putExtra(getString(R.string.extras_matchtype_bad),type);
+
         }
 
         cal.setOnClickListener(new View.OnClickListener() {

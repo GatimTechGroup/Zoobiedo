@@ -94,7 +94,13 @@ public class GroundsListFragment extends Fragment {
                 mFailitySlotsList = response.body();
                 Log.d("debug","facility slots"+mFailitySlotsList.size());
                 mpProgressDialog.dismiss();
-                myAdapter = new GroundsAdapter(getActivity(), mFailitySlotsList,Constants.LIST_GROUNDS_CRIC);
+                if(getArguments().getString(getString(R.string.extras_matchtype_cricket))!=null) {
+                    myAdapter = new GroundsAdapter(getActivity(), mFailitySlotsList, Constants.LIST_GROUNDS_CRIC);
+                }
+                else
+                {
+                    myAdapter = new GroundsAdapter(getActivity(), mFailitySlotsList, Constants.LIST_GROUNDS_BAD);
+                }
                 myRecyclerView.setAdapter(myAdapter);
 
             }

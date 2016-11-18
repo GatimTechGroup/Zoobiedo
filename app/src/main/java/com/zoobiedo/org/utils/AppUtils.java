@@ -254,6 +254,7 @@ public class AppUtils {
     public static String getTmeStamp(String date)
     {
         DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
         Date d = null;
         Timestamp timestamp = null;
         try {
@@ -262,9 +263,8 @@ public class AppUtils {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Log.d("debug","date stamp"+"/Date("+String.valueOf(timestamp.getTime())+")/");
-        //return "/Date("+String.valueOf(timestamp.getTime())+")/";
-        return "/Date(1462406400000)/";
+        return "/Date("+String.valueOf(timestamp.getTime())+")/";
+       // return "/Date(1462406400000)/";
     }
 
     public static boolean hasPermissions(Context context, String permission) {
@@ -281,11 +281,53 @@ public class AppUtils {
     {
        int i =  Integer.parseInt(hours.replace("P","").replace("T","").replace("H",""));
 
+
+
         if(i < 12)
         {
             return i+" AM";
         }else
         {
+            switch (i)
+            {
+                case 13:
+                    i = 1;
+                    break;
+                case 14:
+                    i = 2;
+                    break;
+                case 15:
+                    i = 3;
+                    break;
+                case 16:
+                    i = 4;
+                    break;
+                case 17:
+                    i = 5;
+                    break;
+                case 18:
+                    i = 6;
+                    break;
+                case 19:
+                    i = 7;
+                    break;
+                case 20:
+                    i = 8;
+                    break;
+                case 21:
+                    i = 9;
+                    break;
+                case 22:
+                    i = 10;
+                    break;
+                case 23:
+                    i = 11;
+                    break;
+                case 24:
+                    i = 00;
+                    break;
+            }
+
             return i+" PM";
         }
     }

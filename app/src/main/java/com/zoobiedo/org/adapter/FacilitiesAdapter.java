@@ -58,7 +58,7 @@ public class FacilitiesAdapter extends RecyclerView.Adapter<FacilitiesAdapter.My
             } else if (groundsList.get(position).getGroundName().equalsIgnoreCase(Constants.FACILITY_AMBULANCE)) {
                // holder.icon.setBackgroundResource(R.drawable.facilitykit);
             } else if (groundsList.get(position).getGroundName().equalsIgnoreCase(Constants.FACILITY_BALL_PURCHASE)) {
-                //holder.icon.setBackgroundResource(R.drawable.facilityfirstaid);
+                holder.icon.setBackgroundResource(R.drawable.facilityfirstaid);
             } else if (groundsList.get(position).getGroundName().equalsIgnoreCase(Constants.FACILITY_FLOOD_LIGHT)) {
                 //holder.icon.setBackgroundResource(R.drawable.facilityfirstaid);
             } else if (groundsList.get(position).getGroundName().equalsIgnoreCase(Constants.FACILITY_SHOE)) {

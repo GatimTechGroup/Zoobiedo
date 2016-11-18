@@ -45,12 +45,16 @@ public class GameGroundsActivity extends AppCompatActivity implements View.OnCli
             bundle.putString(getString(R.string.extras_matchtype_cricket),Constants.LIST_GROUNDS_CRIC);
             listType = getIntent().getExtras().getString(getString(R.string.extras_matchtype_cricket));
             mFacilitySlotsRequestData = getIntent().getExtras().getParcelable(getString(R.string.extras_req_data));
+            bundle.putString(getString(R.string.extras_matchtype_cricket),listType);
             bundle.putParcelable(getString(R.string.extras_req_data),mFacilitySlotsRequestData);
         }
         else if(getIntent().getExtras().getString(getString(R.string.extras_matchtype_bad))!= null)
         {
             bundle.putString(getString(R.string.extras_matchtype_bad),Constants.LIST_NETS);
             listType = getIntent().getExtras().getString(getString(R.string.extras_matchtype_bad));
+            mFacilitySlotsRequestData = getIntent().getExtras().getParcelable(getString(R.string.extras_req_data));
+            bundle.putString(getString(R.string.extras_matchtype_bad),listType);
+            bundle.putParcelable(getString(R.string.extras_req_data),mFacilitySlotsRequestData);
         }
         fragment.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();
